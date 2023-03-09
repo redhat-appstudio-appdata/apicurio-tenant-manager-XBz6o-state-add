@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: apicurio-tenant-manager-fwht
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: apicurio-tenant-manager-fwht
+    app.kubernetes.io/part-of: apicurio-tenant-manager
+  name: apicurio-tenant-manager-fwht
+  namespace: nipatil-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: apicurio-tenant-manager-fwht
+    weight: 100
+status: {}
