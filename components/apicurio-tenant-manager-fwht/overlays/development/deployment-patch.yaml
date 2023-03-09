@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: apicurio-tenant-manager-fwht
+  namespace: nipatil-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:0c56f543a57c1b187a91ca42810f20d6e376e00b955638dcaf3711e8983e750c
+        name: container-image
+        resources: {}
+status: {}
